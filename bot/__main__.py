@@ -83,7 +83,7 @@ def restart(update, context):
         Interval[0].cancel()
     alive.kill()
     clean_all()
-    srun(["pkill", "-9", "-f", "gunicorn|extra-api|last-api|megasdkrest|new-api"])
+    srun(["pkill", "-9", "-f", "gunicorn|aria2c|qbittorrent-nox|megasdkrest|new-api"])
     srun(["python3", "update.py"])
     with open(".restartmsg", "w") as f: 
         f.truncate(0)
